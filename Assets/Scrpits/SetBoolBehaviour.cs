@@ -6,6 +6,7 @@ public class SetBoolBehaviour : StateMachineBehaviour
 {
 
     public string boolName;
+    public bool updateOnState;
     public bool updateStateMachine;
     public bool valueOnEnter;
     public bool valueOnExit;
@@ -13,7 +14,10 @@ public class SetBoolBehaviour : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        if (updateOnState)
+        {
+            animator.SetBool(boolName, valueOnEnter);
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
