@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: player_attack_1
+  m_Name: mushroom_attack
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -31,7 +31,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.5
+        time: 0.2
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -40,8 +40,17 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.90000004
-        value: 1
+        time: 0.7
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -52,7 +61,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: IceAttack
+    path: GreenSmokeAttack
     classID: 60
     script: {fileID: 0}
     flags: 0
@@ -60,23 +69,25 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1615416297, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
+      value: {fileID: -1594039230, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
     - time: 0.1
-      value: {fileID: -1737243766, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
+      value: {fileID: -1553321047, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
     - time: 0.2
-      value: {fileID: -1474256150, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
+      value: {fileID: 1715011799, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
     - time: 0.3
-      value: {fileID: 1366869145, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
+      value: {fileID: -27048128, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
     - time: 0.4
-      value: {fileID: -1412480511, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
+      value: {fileID: -2066521108, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
     - time: 0.5
-      value: {fileID: 1902345079, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
+      value: {fileID: -2030143434, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
     - time: 0.6
-      value: {fileID: 274491557, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
+      value: {fileID: -918103136, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
     - time: 0.7
-      value: {fileID: 1346285350, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
+      value: {fileID: -1098208315, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
     - time: 0.8
-      value: {fileID: 1079562081, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
+      value: {fileID: 2059492550, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
+    - time: 0.9
+      value: {fileID: -1872473260, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -90,7 +101,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3799837766
+      path: 2820224361
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 60
@@ -108,26 +119,27 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1615416297, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
-    - {fileID: -1737243766, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
-    - {fileID: -1474256150, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
-    - {fileID: 1366869145, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
-    - {fileID: -1412480511, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
-    - {fileID: 1902345079, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
-    - {fileID: 274491557, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
-    - {fileID: 1346285350, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
-    - {fileID: 1079562081, guid: 4e868701fce4b6e43b5f0502da329088, type: 3}
+    - {fileID: -1594039230, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
+    - {fileID: -1553321047, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
+    - {fileID: 1715011799, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
+    - {fileID: -27048128, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
+    - {fileID: -2066521108, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
+    - {fileID: -2030143434, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
+    - {fileID: -918103136, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
+    - {fileID: -1098208315, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
+    - {fileID: 2059492550, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
+    - {fileID: -1872473260, guid: 0cc3b95342c307440812251e1c09bd00, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.90000004
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -152,7 +164,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.5
+        time: 0.2
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -161,8 +173,17 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.90000004
-        value: 1
+        time: 0.7
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -173,7 +194,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: IceAttack
+    path: GreenSmokeAttack
     classID: 60
     script: {fileID: 0}
     flags: 0

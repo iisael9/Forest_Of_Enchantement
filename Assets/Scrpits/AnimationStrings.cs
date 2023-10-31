@@ -14,9 +14,13 @@
     internal static string isFacingRight = "isFacingRight";
     internal static string isOnWall = "isOnWall";
     internal static string isOnCeiling = "isOnCeiling";
+    internal static string hasTarget = "hasTarget";
+    internal static string isAlive = "isAlive";
+    internal static string isHit = "isHit";
+    internal static string hitTrigger = "hit";
+    internal static string lockVelocity = "lockVelocity";
     //internal static string isAttacking = "isAttacking";
     //internal static string attackDamageMultiplier = "attackDamageMultiplier";
-    //internal static string isAlive = "isAlive";
-    //internal static string isHit = "isHit";
-    //internal static string lockVelocity = "lockVelocity";
+
+    //
 }

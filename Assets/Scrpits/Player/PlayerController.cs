@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed = 7f;
@@ -14,7 +14,9 @@ public class PlayerController : MonoBehaviour
     public float jumpImpulse = 10f;
     public float groundDistance = 0.05f;
 
+
     TouchingDirections touchingDirections;
+    Damageable damageable;
 
 
     public Collider2D groundCollider, wallCollider;
@@ -74,31 +76,37 @@ public class PlayerController : MonoBehaviour
 
 
     
-    public float CurrentMoveSpeed
-    {
-        get
+    public float CurrentMoveSpeed { get
         {
-            if (IsMoving && !touchingDirections.IsOnWall)
+            if(CanMove)
             {
-                if (touchingDirections.IsGrounded)
+                if (IsMoving && !touchingDirections.IsOnWall)
                 {
-                    if (IsRunning)
+                    if (touchingDirections.IsGrounded)
                     {
-                        return runSpeed;
+                        if (IsRunning)
+                        {
+                            return runSpeed;
+                        }
+                        else
+                        {
+                            return walkSpeed;
+                        }
                     }
                     else
                     {
-                        return walkSpeed;
+                        return airWalkSpeed;
                     }
                 }
                 else
                 {
-                    return airWalkSpeed;
+                    return 0;
                 }
+                
             }
             else
             {
-                return 0;
+                return 0; 
             }
         }
     }
@@ -110,13 +118,19 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         //physCollider = GetComponent<CapsuleCollider2D>();
         touchingDirections = GetComponent<TouchingDirections>();
+        damageable = GetComponent<Damageable>();
+        
     }
 
     // 10-29-23***********
     
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+        if (!damageable.LockVelocity)
+        {
+            rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+
+        }
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
     }
 
@@ -125,11 +139,16 @@ public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
 
-        IsMoving = moveInput != Vector2.zero /*? true : false*/;
-
         // Allowed to switch direction
-        //if (IsAlive)
-        SetFacingDirection(moveInput);
+        if (IsAlive)
+        {
+            IsMoving = moveInput != Vector2.zero /*? true : false*/;
+            SetFacingDirection(moveInput);
+        }
+        else
+        {
+            IsMoving = false;
+        }
     }
 
 
@@ -164,7 +183,7 @@ public void OnMove(InputAction.CallbackContext context)
     public void OnJump(InputAction.CallbackContext context)
     {
 
-        if (context.started && touchingDirections.IsGrounded)
+        if (context.started && touchingDirections.IsGrounded && CanMove)
         {
             
             animator.SetTrigger(AnimationStrings.jump);
@@ -187,6 +206,28 @@ public void OnMove(InputAction.CallbackContext context)
         {
             animator.SetTrigger(AnimationStrings.attack);
         }
+
+    }
+
+    public bool CanMove {  get
+        {
+            return animator.GetBool(AnimationStrings.canMove);
+        }
+    }
+
+    public bool IsAlive
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.isAlive);
+        }
+    }
+
+    
+
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
 
     }
 }
