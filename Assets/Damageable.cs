@@ -8,6 +8,7 @@ public class Damageable : MonoBehaviour
 
     public UnityEvent<int, Vector2> damageableHit;
     Animator animator;
+  
 
     [SerializeField]
     private int _maxHealth = 100;
