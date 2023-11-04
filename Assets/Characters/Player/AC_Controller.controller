@@ -163,9 +163,6 @@ AnimatorStateMachine:
   - {fileID: 3605374865125765010}
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 7106100637628726044}
-    second:
-    - {fileID: -8844631515602005228}
   - first: {fileID: 498297368192273137}
     second:
     - {fileID: 5608623500954757036}
@@ -174,6 +171,9 @@ AnimatorStateMachine:
   - first: {fileID: 5132884771759149106}
     second:
     - {fileID: 5857258560127376612}
+  - first: {fileID: 7106100637628726044}
+    second:
+    - {fileID: -8844631515602005228}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 680, y: -30, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
@@ -618,7 +618,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 0}
   - m_Name: isAlive
     m_Type: 4
@@ -702,7 +702,7 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 10
+  m_Name: Ground State
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1518085529723071181}
